@@ -1,3 +1,2 @@
-# SP8LocalMirrorBundle
-Medical Informatics Platform Local Mirror Bundle
-Repository to host the open source software to host for the collaboration in the MIP SP8 
+# SP8 Local Mirro rBundle
+Repository for the collaboration on Local Data Store Mirror for the Medical Informatics Platform.
