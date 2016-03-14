@@ -18,8 +18,8 @@ First, data is anonymized when exporting it from hospital systems:
 is exported by selecting all fields and attributes that do not contain unique identifiers (e.g., names etc.). 
 All free text in the patient data is searched for the unique identifiers to redact them. 
 1. Metadata (DICOM headers): anonymization of the metadata primarily focuses on removing identifiers from DICOM headers. The following two procedures are used combined: 
-⋅⋅1. A software component removes all DICOM header fields containing patient identifiers. The bidder maintains (and updates) a blacklist of all fields suspected to contain identifiers.
-⋅⋅1. Identifiers (e.g., name) of the patient are used in a fulltext search of the header fields, redacting or replacing all identifiers. Risk of misspelled identifiers (names etc.) is mitigated by using an approximate fulltext search. 
+  1. A software component removes all DICOM header fields containing patient identifiers. The bidder maintains (and updates) a blacklist of all fields suspected to contain identifiers.
+  1. Identifiers (e.g., name) of the patient are used in a fulltext search of the header fields, redacting or replacing all identifiers. Risk of misspelled identifiers (names etc.) is mitigated by using an approximate fulltext search. 
 1. Genetic data as well as lab results (blood tests, etc.) are anonymized by removing personal identifiers as well.
 The process of stripping personal information from DICOM images is performed repeatedly. First all images produced to date will be stripped in one go before the launch of the medical informatics platform. Subsequently, the anonymization process is repeated on a regular basis (i.e., every three months) where only the new images need to be processes. 
 
