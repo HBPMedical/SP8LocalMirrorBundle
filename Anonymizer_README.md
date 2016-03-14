@@ -33,7 +33,8 @@ The results of each query are also anonymized before they leave the local hospit
 The anonymization module requires the following:
    * a Java 7 JRE/JDK (or greater) is required to run the Anonymizers. 
    * a valid license 
- The language for the configuration files is YAML (“YAML Ain’t Markup Language). 
+
+The language for the configuration files is YAML (“YAML Ain’t Markup Language). 
 YAML is a human readable data serialization language. Due to the YAML Parser used, some syntax constraints have to be respected:
    * Indent using the space character (always use the same number of space characters) 
    * Do not indent using the tabulation character 
