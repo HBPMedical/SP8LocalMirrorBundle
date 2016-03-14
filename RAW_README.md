@@ -55,10 +55,8 @@ Response: `case class SchemasResponse(schemas: Seq[String])`
 ###Non Paginated Query:
 **URI:** /query
 
-Request: `case class QueryRequest(query: String)`
-
-Response Success `case class QueryResponse(output: Any, compilationTime: Long, executionTime: Long)`
-
+Request: `case class QueryRequest(query: String)` <br>
+Response Success `case class QueryResponse(output: Any, compilationTime: Long, executionTime: Long)`<br>
 Response Failure One of:
 `case class CompilationErrorResponse(errorType: String, error: QueryError)`
 `case class ExceptionResponse(exceptionType: String, message: String, stackTrace: String)`
@@ -132,9 +130,10 @@ URI:/query-close
 If the token is not known, the server ignores the request and returns 200 status.
 Request: case class QueryCloseRequest(token: String)
 Response: empty body
+```
 Pagination is currently forward-only. To start, call /query-start with the query. 
 The response will contain the first block of data as well as indicators of the index 
 of the first result and the number of results in this block. 
  The hasMore and token allow retrieving the next block. 
 The token is only returned when there are more results.
-```
+
