@@ -56,7 +56,7 @@ Response: `case class SchemasResponse(schemas: Seq[String])`
 **URI:** /query
 
 Request: `case class QueryRequest(query: String)` <br>
-Response Success `case class QueryResponse(output: Any, compilationTime: Long, executionTime: Long)`<br>
+Response Success: `case class QueryResponse(output: Any, compilationTime: Long, executionTime: Long)`<br>
 Response Failure One of:<br>
 `case class CompilationErrorResponse(errorType: String, error: QueryError)`<br>
 `case class ExceptionResponse(exceptionType: String, message: String, stackTrace: String)`
