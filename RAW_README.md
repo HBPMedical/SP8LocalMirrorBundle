@@ -50,15 +50,19 @@ Response: Empty response.
 ###List schemas:
 URI: /schemas
 Request: Body:
-Response: `case class SchemasResponse(schemas: Seq[String])
+Response: `case class SchemasResponse(schemas: Seq[String])`
 
 ###Non Paginated Query:
-**URI /query**
-Request: case class QueryRequest(query: String)
-Response Success case class QueryResponse(output: Any, compilationTime: Long, executionTime: Long)
+**URI:** /query
+
+Request: `case class QueryRequest(query: String)`
+
+Response Success `case class QueryResponse(output: Any, compilationTime: Long, executionTime: Long)`
+
 Response Failure One of:
-case class CompilationErrorResponse(errorType: String, error: QueryError)
-case class ExceptionResponse(exceptionType: String, message: String, stackTrace: String)
+`case class CompilationErrorResponse(errorType: String, error: QueryError)`
+`case class ExceptionResponse(exceptionType: String, message: String, stackTrace: String)`
+
 **Parse error, response status: 400**
 ```
 {
@@ -115,7 +119,10 @@ at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:
 ```
 
 ###Query - Paginated
-**URI: /query-start**
+
+**URI:** /query-start
+
+```
 Request: case class QueryStartRequest(query: String, resultsPerPage:Int)
 Response: case class QueryBlockResponse(data: Any, start: Int, size: Int, hasMore: Boolean, token: String, var compilationTime: Long, var executionTime: Long)
 URI:/query-next
@@ -130,3 +137,4 @@ The response will contain the first block of data as well as indicators of the i
 of the first result and the number of results in this block. 
  The hasMore and token allow retrieving the next block. 
 The token is only returned when there are more results.
+```
