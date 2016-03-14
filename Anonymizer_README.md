@@ -10,7 +10,10 @@ The goal of the anonymizer module deployed at a hospital is to (a) strip all dat
 More precisely, identifiers are initially removed when exporting data from hospital information systems, i.e., even before the data is accessed by the medical informatics platform for the first time. In this process all personal identifiers are stripped from the data. Second, to ensure no personal information leaves the hospitals, incoming queries are checked to ensure they only request fields made available to the federated platform. Finally, to further reduce the information available about individual patients, the platform filters all results (ensuring they do not contain any personal patient information) before returning them to the users of the platform. The three components have the following functionality.
 ##Anonymization on Export from Hospital Systems
 First, data is anonymized when exporting it from hospital systems:
-1. Patient data stored in systems like Molis, Soarian, PACS from vendors such as Siemens is exported by selecting all fields and attributes that do not contain unique identifiers (e.g., names etc.). All free text in the patient data is searched for the unique identifiers to redact them. 
+    
+1. Patient data stored in systems like Molis, Soarian, PACS from vendors such as Siemens 
+is exported by selecting all fields and attributes that do not contain unique identifiers (e.g., names etc.). 
+All free text in the patient data is searched for the unique identifiers to redact them. 
 2. Metadata (DICOM headers): anonymization of the metadata primarily focuses on removing identifiers from DICOM headers. The following two procedures are used combined: 
 ..1. A software component removes all DICOM header fields containing patient identifiers. The bidder maintains (and updates) a blacklist of all fields suspected to contain identifiers.
 ..2. Identifiers (e.g., name) of the patient are used in a fulltext search of the header fields, redacting or replacing all identifiers. Risk of misspelled identifiers (names etc.) is mitigated by using an approximate fulltext search. 
